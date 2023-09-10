@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node ./src/Launcher.ts",
-    "dev": "nodemon ./src/Launcher.ts"
+    "start": "ts-node ./src/app/Launcher.ts",
+    "dev": "nodemon ./src/app/Launcher.ts"
   },
   "keywords": [],
   "author": "",
