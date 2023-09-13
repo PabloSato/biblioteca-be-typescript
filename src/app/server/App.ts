@@ -2,12 +2,16 @@ import express, { Application } from 'express';
 import { IncomingMessage, Server, ServerResponse } from 'http';
 import morgan from 'morgan';
 
+//
+import { APIRouter } from './../router/api.routes';
+
 export class App {
   private app: Application;
 
   constructor() {
     this.app = express();
     this.middleware();
+    this.api_routes();
   }
 
   private middleware() {
@@ -15,6 +19,10 @@ export class App {
       this.app.use(morgan('dev'));
     }
     this.app.use(express.json());
+  }
+
+  private api_routes() {
+    this.app.use('/api/v1', APIRouter);
   }
 
   public listen(
